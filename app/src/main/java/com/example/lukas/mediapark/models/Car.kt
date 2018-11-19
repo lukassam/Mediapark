@@ -1,0 +1,4 @@
+package com.example.lukas.mediapark.models
+
+data class Car(val id: Long?, val plateNumber: String?,
+               val location: CarLocation, val model: CarModel)
