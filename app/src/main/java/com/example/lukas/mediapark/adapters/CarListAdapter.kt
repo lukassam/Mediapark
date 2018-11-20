@@ -9,6 +9,7 @@ import com.example.lukas.mediapark.R
 import com.example.lukas.mediapark.models.Car
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.car_recycler_view_item.view.*
+import java.text.DecimalFormat
 
 class CarListAdapter(carList: List<Car>, context: Context): RecyclerView.Adapter<CarListAdapter.ViewHolder>() {
 
@@ -29,10 +30,19 @@ class CarListAdapter(carList: List<Car>, context: Context): RecyclerView.Adapter
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view){
         val carName = view.car_name_text_holder
         val carImage = view.car_image_holder
+        val carPercentage = view.car_battery_text_holder
+        val carDistance = view.car_distance_text_holder
+        val distanceFromLocation = view.distance_from_location_text_holder
+        val carPlate = view.car_plate_text_holder
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.carName.text = carList[position].model.title
-        Picasso.get().load(carList[position].model.photoUrl).into(holder.carImage);
+        holder.carName.text = carList[position].model?.title
+        Picasso.get().load(carList[position].model?.photoUrl).into(holder.carImage);
+        holder.carDistance.text = carList[position].batteryPercentage.toString() + " %"
+        holder.carPercentage.text = carList[position].batteryEstimatedDistance.toString() + " km available"
+        holder.distanceFromLocation.text = DecimalFormat("##.##").format(carList[position].distance) + " km from car"
+        holder.carPlate.text = carList[position].plateNumber
+
     }
 }

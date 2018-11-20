@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    <androidx.cardview.widget.CardView
+<androidx.cardview.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="12dp" android:layout_marginStart="12dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="12dp" android:layout_marginRight="12dp" android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
             app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,20 +22,56 @@
                     android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginBottom="8dp"
                     app:layout_constraintBottom_toBottomOf="parent"/>
 
-            <TextView android:id="@+id/car_name_text_holder"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:text="Audi"
-                      android:textColor="@android:color/black"
-                      android:textSize="24sp"
-                      android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
-                      android:layout_marginRight="8dp" app:layout_constraintStart_toEndOf="@+id/car_image_holder"
-                      android:layout_marginStart="8dp" android:layout_marginLeft="8dp" android:layout_marginBottom="8dp"
-                      app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
-                      app:layout_constraintTop_toTopOf="parent"/>
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                          android:orientation="vertical"
+                          android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
+                          android:layout_marginRight="8dp" app:layout_constraintStart_toEndOf="@+id/car_image_holder"
+                          android:layout_marginStart="8dp" android:layout_marginLeft="8dp"
+                          android:layout_marginBottom="8dp"
+                          app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
+                          app:layout_constraintTop_toTopOf="parent">
+
+                <TextView android:id="@+id/car_name_text_holder"
+                          android:layout_width="match_parent"
+                          android:gravity="center_horizontal"
+                          android:layout_height="wrap_content"
+                          android:text="Audi"
+                          android:textColor="@android:color/black"
+                          android:textSize="24sp"/>
+
+                <TextView android:id="@+id/car_battery_text_holder"
+                          android:layout_width="match_parent"
+                          android:gravity="center_horizontal"
+                          android:layout_height="wrap_content"
+                          android:text="99 %"
+                          android:textColor="@android:color/black"
+                          android:textSize="18sp"/>
+
+                <TextView android:id="@+id/car_distance_text_holder"
+                          android:layout_width="match_parent"
+                          android:gravity="center_horizontal"
+                          android:layout_height="wrap_content"
+                          android:text="10 km available"
+                          android:textColor="@android:color/black"
+                          android:textSize="18sp"/>
+
+                <TextView android:id="@+id/distance_from_location_text_holder"
+                          android:layout_width="match_parent"
+                          android:gravity="center_horizontal"
+                          android:layout_height="wrap_content"
+                          android:text="55 km"
+                          android:textColor="@android:color/black"
+                          android:textSize="18sp"/>
+                <TextView android:id="@+id/car_plate_text_holder"
+                          android:layout_width="match_parent"
+                          android:gravity="center_horizontal"
+                          android:layout_height="wrap_content"
+                          android:text="EVO123"
+                          android:textColor="@android:color/black"
+                          android:textSize="18sp"/>
+
+            </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.cardview.widget.CardView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
